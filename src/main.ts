@@ -28,6 +28,7 @@ async function bootstrap() {
 
   // Use process.env.PORT for Vercel, fallback to 8090 for local dev
   const port = process.env.PORT || 8090;
+  await app.listen(port, '0.0.0.0');
   await app.listen(port);
   console.log('Static files path:', join(__dirname, '..', 'uploads'));
   console.log('Current directory:', __dirname);
